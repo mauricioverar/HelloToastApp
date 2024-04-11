@@ -20,19 +20,38 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // recibir datos desde layout
-        //TextView txt1 =findViewById(R.id.num1);
+        // referenciar
+        TextView numText = findViewById(R.id.textView2);
         Button btn1 = findViewById(R.id.button);
         Button btn2 = findViewById(R.id.button2);
 
+
+
+        // mostrar mensaje Hello toast!
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // variables
                 CharSequence text = "Hello toast!";
                 int duration = Toast.LENGTH_SHORT;
                 // duracion toast=ventana emergente
                 Toast toast = Toast.makeText(getBaseContext(), text, duration);
                 toast.show();
+            }
+        });
+
+        // aumentar contador
+        btn2.setOnClickListener(new View.OnClickListener() {
+            // variables
+            int contador = 0;
+
+            @Override
+            public void onClick(View v) {
+                contador ++;
+
+                 numText.setText(Integer.toString(contador));
+
+
             }
         });
 
